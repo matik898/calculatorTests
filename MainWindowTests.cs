@@ -16,9 +16,13 @@ namespace calculator.Tests
         }
 
         [TestMethod()]
-        public void GetInitResultTest()
+        public void ValidateString()
         {
-            Assert.AreEqual(0, MainWindow.GetInitResult());
+            MainWindow.ValidateString validator = new MainWindow.ValidateString();
+
+            bool existInString = validator.Validate("test123", '1');
+
+            Assert.AreEqual(true, existInString);
         }
     }
 }
